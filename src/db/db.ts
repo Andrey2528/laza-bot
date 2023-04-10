@@ -2,7 +2,8 @@ import { DataTypes, Sequelize } from 'sequelize'
 
 const sequelize = new Sequelize('laza-db', 'postgres', 'M6KlebgYJt7jnfK', { //название дб, имя пользователя и пароль(паросль оставил пустным)
   dialect: 'postgres',
-  host: 'laza-db.internal',
+  //host: 'laza-db.internal',
+  host: process.env.PSQL_HOST || "laza-db.fly.dev",
   port: 5432,
 
 })
