@@ -7,7 +7,7 @@ import { sequelize } from "./db/db"
 const adminService = new AdminService
 const messageService = new MessageService
 const callbackService = new CallbackService
-const token = ''
+const token = '6161554599:AAGsl1GerAcjW0MVSLxHN78dFJ-7bcazO4Q'
 const bot = new TelegramBot(token, { polling: true })
 
 bot.setMyCommands([
