@@ -1,9 +1,9 @@
 import { DataTypes, Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize('TelegramBot', 'postgres', '', { //название дб, имя пользователя и пароль(паросль оставил пустным)
+const sequelize = new Sequelize('laza-db', 'postgres', 'M6KlebgYJt7jnfK', { //название дб, имя пользователя и пароль(паросль оставил пустным)
   dialect: 'postgres',
   host: 'laza-db.internal',
-  port: 5433,
+  port: 5432,
 
 })
 
