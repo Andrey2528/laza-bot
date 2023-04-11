@@ -11,7 +11,7 @@ import { DataTypes, Sequelize } from 'sequelize'
 const sequelize = new Sequelize('laza-bot-db', 'postgres', 'VIsFCxAF7jucKIJ', {
   host: 'laza-bot-db.flycast',
   dialect: 'postgres', 
-  port: 8080,
+  port: 5432,
 })
 
 const Users = sequelize.define('Users', {
