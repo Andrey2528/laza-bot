@@ -2,7 +2,8 @@ import TelegramBot = require("node-telegram-bot-api")
 import MessageService from "./service/messageService"
 import CallbackService from "./service/callbackService"
 import AdminService from "./service/adminService"
-import { sequelize } from "./db/db"
+import { db } from "./db/db"
+
 
 const adminService = new AdminService
 const messageService = new MessageService
@@ -10,16 +11,20 @@ const callbackService = new CallbackService
 const token = '6161554599:AAGsl1GerAcjW0MVSLxHN78dFJ-7bcazO4Q'
 const bot = new TelegramBot(token, { polling: true })
 
+
 bot.setMyCommands([
   { command: '/start', description: 'Приветствие' },
   { command: '/help', description: 'Вопрос нам' }
 ])
 
-sequelize.authenticate()
-sequelize.sync()
-console.log('Server running on port 8080');
-console.log(sequelize);
 
+try {
+  db.authenticate()
+  console.log('Соединение с БД было успешно установлено')
+  db.sync()
+} catch (e) {
+  console.log('Невозможно выполнить подключение к БД: ', e)
+}
 
 
 const admins = [
@@ -71,5 +76,5 @@ bot.on('callback_query', msg => {
   }
 })
 
-export { sequelize }
+export { db }
 export default bot

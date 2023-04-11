@@ -9,8 +9,11 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.18.0",
     "@types/node": "^18.15.11",
     "@types/node-telegram-bot-api": "^0.61.5",
+    "dotenv": "^16.0.3",
+    "mysql2": "^3.2.0",
     "node-telegram-bot-api": "^0.61.0",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",

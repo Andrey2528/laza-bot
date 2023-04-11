@@ -1,22 +1,17 @@
 import { DataTypes, Sequelize } from 'sequelize'
 
-/*const sequelize = new Sequelize('laza-db', 'postgres', 'VIsFCxAF7jucKIJ', { //название дб, имя пользователя и пароль(паросль оставил пустным)
-  dialect: 'postgres',
-  //host: 'laza-db.internal',
-  port: 8080,
-})*/
-
-//const sequelize = new Sequelize('postgres://postgres:VIsFCxAF7jucKIJ@laza-bot-db.flycast:5432')
-
-const sequelize = new Sequelize('laza-bot-db', 'postgres', 'VIsFCxAF7jucKIJ', {
-  host: 'laza-bot-db.flycast',
-  dialect: 'postgres', 
-  port: 5432,
+const db = new Sequelize(
+    'u831279752_lazanailartbot',
+    'admin',
+    'xM5Sy0b4Kc@',
+    {
+        host: '86.38.202.204',
+        dialect: 'mysql',
+        port: 3306,
+    })
+const Users = db.define('Users', {
+    userId: { type: DataTypes.INTEGER },
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
 })
 
-const Users = sequelize.define('Users', {
-  userId: { type: DataTypes.INTEGER },
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true }
-})
-
-export { Users, sequelize }
+export { Users, db }
