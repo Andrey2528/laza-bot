@@ -17,6 +17,10 @@ bot.setMyCommands([
 
 sequelize.authenticate()
 sequelize.sync()
+console.log('Server running on port 8080');
+console.log(sequelize);
+
+
 
 const admins = [
   'anastasia_hryn',
