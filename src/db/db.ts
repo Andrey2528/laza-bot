@@ -4,7 +4,7 @@ const sequelize = new Sequelize('laza-db', 'postgres', 'VIsFCxAF7jucKIJ', { //н
   dialect: 'postgres',
   //host: 'laza-db.internal',
   //host: process.env.PSQL_HOST || "laza-bot-db.flycast:",
-  host: 'fdaa:1:e2a4:0:1::3',
+  host: 'laza-bot-db.flycast',
   port: 8080,
 })
 
